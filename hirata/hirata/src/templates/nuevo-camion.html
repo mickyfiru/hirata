@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Nuevo Camión</title>
+</head>
+<body>
+    <h2>Nuevo Camión</h2>
+    <form th:action="@{/camiones/nuevo}" th:object="${camion}" method="post">
+        <label>Patente:</label>
+        <input type="text" th:field="*{patente}" required><br><br>
+
+        <label>Marca:</label>
+        <input type="text" th:field="*{marca}" required><br><br>
+
+        <label>Modelo:</label>
+        <input type="text" th:field="*{modelo}" required><br><br>
+
+        <label>Año:</label>
+        <input type="number" th:field="*{anio}" required><br><br>
+
+        <button type="submit">Guardar</button>
+    </form>
+    <a href="/camiones">Volver</a>
+</body>
+</html>

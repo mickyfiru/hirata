@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Dashboard</title>
+</head>
+<body>
+    <h1>Panel Principal - Hirata</h1>
+
+    <p>Total camiones: <span th:text="${camiones}"></span></p>
+    <p>Total conductores: <span th:text="${conductores}"></span></p>
+    <p>Total mantenimientos: <span th:text="${mantenimientos}"></span></p>
+    <p>Alertas activas: <span th:text="${alertas}"></span></p>
+
+    <a href="/camiones">Camiones</a> |
+    <a href="/kilometraje">Registrar kilometraje</a> |
+    <a href="/mantenimientos">Mantenimientos</a> |
+    <a href="/logout">Cerrar sesión</a>
+</body>
+</html>
