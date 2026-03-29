@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Registrar Kilometraje</title>
+</head>
+<body>
+    <h2>Registrar Kilometraje</h2>
+
+    <form th:action="@{/kilometraje}" method="post">
+        <label>Camión:</label>
+        <select name="camionId" required>
+            <option th:each="c : ${camiones}" th:value="${c.id}"
+                    th:text="${c.patente + ' - ' + c.marca + ' ' + c.modelo}"></option>
+        </select>
+        <br><br>
+
+        <label>Kilómetros recorridos:</label>
+        <input type="number" name="kilometros" min="1" required>
+        <br><br>
+
+        <button type="submit">Registrar</button>
+    </form>
+
+    <a href="/dashboard">Volver</a>
+</body>
+</html>

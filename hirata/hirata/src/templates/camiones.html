@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Camiones</title>
+</head>
+<body>
+    <h2>Lista de Camiones</h2>
+    <a href="/camiones/nuevo">Nuevo camión</a>
+    <table border="1">
+        <tr>
+            <th>ID</th>
+            <th>Patente</th>
+            <th>Marca</th>
+            <th>Modelo</th>
+            <th>Año</th>
+            <th>KM acumulado</th>
+            <th>KM desde mantención</th>
+        </tr>
+        <tr th:each="c : ${camiones}">
+            <td th:text="${c.id}"></td>
+            <td th:text="${c.patente}"></td>
+            <td th:text="${c.marca}"></td>
+            <td th:text="${c.modelo}"></td>
+            <td th:text="${c.anio}"></td>
+            <td th:text="${c.kilometrajeAcumulado}"></td>
+            <td th:text="${c.kilometrajeDesdeMantenimiento}"></td>
+        </tr>
+    </table>
+    <br>
+    <a href="/dashboard">Volver</a>
+</body>
+</html>
